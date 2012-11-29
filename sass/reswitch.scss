@@ -1,0 +1,34 @@
+* {
+	@include box-sizing(border-box);
+	outline: none !important;
+	outline: 0 !important;
+}
+
+.reswitch {
+	cursor: pointer;
+
+	input {
+		display: none;
+	}
+
+	.reswitch-inner {
+		overflow: hidden;
+	}
+
+	.on, .off, .toggle-placeholder {
+		float: left;
+		text-align: center;
+		white-space: nowrap;
+	}
+
+	&.js-toggle {
+		position: relative;
+
+		.reswitch-toggle {
+			position: absolute;
+			top: 0;	z-index: 100;
+		}
+	}
+}
+
+@import "themes/iphone4";

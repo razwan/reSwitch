@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>reSwitch</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-v1.8.3.js"></script>
+	<script src="js/reswitch-v1.0.js"></script>
+	<script src="js/prettify.js"></script>
+	<script src="js/scripts.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>
+<div class="container">
+	<hgroup>
+		<h1>reSwitch <small>v1.0</small><br><small>A jQuery plugin for styling checkboxes and radio buttons</small></h1>
+	</hgroup>
+	<p>The need for customizing every aspect of the forms we designed has driven us crazy searching different plugins to help us customize checkboxes and radio groups. There is a lot of good and bad out there. It just depends on how much each and every one of those out there suits you.</p>
+	<p>So we've got to this point where we wanted it all: heavy css, animation and responsiveness. Doodling around with the code gave birth to this plugin we call reSwitch.</p>
+	
+	<h2 class="hidden" hidden>How to style checkboxes with css and javascript using the reSwitch jQuery plugin</h2>
+	<form class="form form-horizontal" action="submit.php" method="POST">	
+		<fieldset class="default">
+			<legend>Checkboxes</legend>
+			<div class="control-group">
+				<label class="control-label">Wireless</label>
+				<div class="controls">
+					<input type="checkbox" name="checkboxgroup[]" value="silent" checked="checked">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Bluetooth</label>
+				<div class="controls">
+					<input type="checkbox" name="checkboxgroup[]" value="general" checked="checked">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Data</label>
+				<div class="controls">
+					<input type="checkbox" name="checkboxgroup[]" value="meeting">
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	<h4>The HTML</h4>
+	<pre class="prettyprint linenums language-html">&lt;label&gt;Wireless&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;settings&quot; value=&quot;wireless&quot; checked&gt;
+&lt;label&gt;Bluetooth&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;settings&quot; value=&quot;bluetooth&quot; checked&gt;
+&lt;label&gt;Data&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;settings&quot; value=&quot;data&quot;&gt;</pre>
+	<h4>The JavaScript</h4>
+	<pre class="prettyprint linenums language-js">$('[type="checkbox"]').reswitch({
+	textOn: 'I',
+	textOff: 'O',
+	hasToggle: true,
+	theme: 'iphone4'
+});</pre>
+	<h2 class="hidden" hidden>Styling radio buttons with reSwitch</h2>
+	<form class="form form-horizontal" action="submit.php" method="POST">
+		<fieldset class="default">
+			<legend>Radio groups</legend>
+			<div class="control-group">
+				<label class="control-label">General</label>
+				<div class="controls">
+					<input type="radio" name="radiogroup[]" value="silent" checked="checked">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Meeting</label>
+				<div class="controls">
+					<input type="radio" name="radiogroup[]" value="general">
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">Silent</label>
+				<div class="controls">
+					<input type="radio" name="radiogroup[]" value="meeting">
+				</div>
+			</div>
+		</fieldset>
+	</form>
+	<h4>The HTML</h4>
+	<pre class="prettyprint linenums language-html">&lt;label&gt;General&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;profile&quot; value=&quot;general&quot; checked&gt;
+&lt;label&gt;Meeting&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;profile&quot; value=&quot;meeting&quot;&gt;
+&lt;label&gt;Silent&lt;/label&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;profile&quot; value=&quot;silent&quot;&gt;</pre>
+	<h4>The JavaScript</h4>
+	<pre class="prettyprint linenums language-js">$('[type="radio"]').reswitch({
+	textOn: 'I',
+	textOff: 'O',
+	hasToggle: true,
+	theme: 'iphone4 orange'
+});</pre>
+	<h2 class="hidden" hidden>Other ways to style checkboxes and radio groups with the customizing options provided by the plugin</h2>
+	<form class="form form-horizontal" action="submit.php" method="POST">
+		<fieldset>
+			<legend>Variations</legend>
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="control-group">
+						<label class="control-label">Font-Awesome Icons</label>
+						<div class="controls">
+							<input class="icon-reswitch" type="checkbox" name="variations" value="icons">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Text only</label>
+						<div class="controls">
+							<input class="text-reswitch" type="checkbox" name="variations" value="text">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Text with handle</label>
+						<div class="controls">
+							<input class="text-reswitch-no-handle" type="checkbox" name="variations" value="no-handle">
+						</div>
+					</div>
+				</div>
+				<div class="span6">
+					<div class="control-group big">
+						<label class="control-label">Relative to font-size</label>
+						<div class="controls">
+							<input class="text-reswitch-big" type="checkbox" name="variations" value="big" checked>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>
+</body>
+</html>

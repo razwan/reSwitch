@@ -1,0 +1,18 @@
+@import "compass";
+
+@import "lib/bootstrap/bootstrap";
+@import "lib/bootstrap/responsive";
+@import "lib/prettify";
+@import "font-awesome";
+@import "reswitch";
+
+.big {
+
+	.control-label {
+		line-height: 60px;
+	}
+
+	.controls {
+		font-size: 40px;
+	}
+}
