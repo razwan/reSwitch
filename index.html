@@ -13,34 +13,48 @@
 <body>
 <div class="container">
 	<hgroup>
-		<h1>reSwitch <small>v1.0</small><br><small>A jQuery plugin for styling checkboxes and radio buttons</small></h1>
+		<h1>reSwitch <small>v1.0</small><br></h1>
 	</hgroup>
-	<p>The need for customizing every aspect of the forms we designed has driven us crazy searching different plugins to help us customize checkboxes and radio groups. There is a lot of good and bad out there. It just depends on how much each and every one of those out there suits you.</p>
-	<p>So we've got to this point where we wanted it all: heavy css, animation and responsiveness. Doodling around with the code gave birth to this plugin we call reSwitch.</p>
-	
+	<div class="hero-unit">
+		<p>reSwitch is a jQuery plugin for styling checkboxes and radio buttons</p>
+		<p>There are a lot of good and bad jQuery plugins in the wild when it comes to replacing the browsers' default checkboxes and radio buttons. reSwitch may just be what</p>
+		<p>
+			<a class="btn btn-success btn-large" href="https://github.com/razwan/reSwitch/downloads">Download</a>
+			<a class="btn btn-large" href="https://github.com/razwan/reSwitch">View project on GitHub</a>
+		</p>
+	</div>
+			
 	<h2 class="hidden" hidden>How to style checkboxes with css and javascript using the reSwitch jQuery plugin</h2>
 	<form class="form form-horizontal" action="submit.php" method="POST">	
 		<fieldset class="default">
 			<legend>Checkboxes</legend>
-			<div class="control-group">
-				<label class="control-label">Wireless</label>
-				<div class="controls">
-					<input type="checkbox" name="checkboxgroup[]" value="silent" checked="checked">
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="control-group">
+						<label class="control-label">Wireless</label>
+						<div class="controls">
+							<input type="checkbox" name="checkboxgroup[]" value="wireless" checked="checked">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Bluetooth</label>
+						<div class="controls">
+							<input type="checkbox" name="checkboxgroup[]" value="bluetooth" checked="checked">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Data</label>
+						<div class="controls">
+							<input type="checkbox" name="checkboxgroup[]" value="data">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Bluetooth</label>
-				<div class="controls">
-					<input type="checkbox" name="checkboxgroup[]" value="general" checked="checked">
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Data</label>
-				<div class="controls">
-					<input type="checkbox" name="checkboxgroup[]" value="meeting">
-				</div>
+				<div class="span6 results"></div>
 			</div>
 		</fieldset>
+		<div class="form-actions">
+			<button class="btn">Submit</button>
+		</div>
 	</form>
 	<h4>The HTML</h4>
 	<pre class="prettyprint linenums language-html">&lt;label&gt;Wireless&lt;/label&gt;
@@ -60,25 +74,33 @@
 	<form class="form form-horizontal" action="submit.php" method="POST">
 		<fieldset class="default">
 			<legend>Radio groups</legend>
-			<div class="control-group">
-				<label class="control-label">General</label>
-				<div class="controls">
-					<input type="radio" name="radiogroup[]" value="silent" checked="checked">
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="control-group">
+						<label class="control-label">General</label>
+						<div class="controls">
+							<input type="radio" name="radiogroup[]" value="general" checked="checked">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Meeting</label>
+						<div class="controls">
+							<input type="radio" name="radiogroup[]" value="meeting">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Silent</label>
+						<div class="controls">
+							<input type="radio" name="radiogroup[]" value="silent">
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Meeting</label>
-				<div class="controls">
-					<input type="radio" name="radiogroup[]" value="general">
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label">Silent</label>
-				<div class="controls">
-					<input type="radio" name="radiogroup[]" value="meeting">
-				</div>
+				<div class="span6 results"></div>
 			</div>
 		</fieldset>
+		<div class="form-actions">
+			<button class="btn">Submit</button>
+		</div>
 	</form>
 	<h4>The HTML</h4>
 	<pre class="prettyprint linenums language-html">&lt;label&gt;General&lt;/label&gt;

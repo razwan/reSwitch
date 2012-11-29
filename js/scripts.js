@@ -47,6 +47,21 @@
 			hasToggle: true,
 			theme: 'iphone4'
 		});
+
+		$('.form-actions').on('click', '.btn', function(e){
+			e.preventDefault();
+			var $form = $(this).closest('form'),
+				container = $form.find('.results'),
+				results = '';
+			$.each($form.serializeArray(), function(i, field) {
+				results = results + '<li>' + field.value + '</li>';
+			});
+
+			container.html('<h4>Result</h4>');
+			results = $('<ul>' + results + '</ul>').hide();
+			container.append(results);
+			results.fadeIn();
+		});
 	});
 
 }(jQuery));
