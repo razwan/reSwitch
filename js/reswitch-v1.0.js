@@ -205,7 +205,7 @@
 						// Handle the start
 						var event = e.originalEvent,
 							touch = event.targetTouches ? event.targetTouches[0] : e;
-							// e.preventDefault();
+							e.preventDefault();
 
 							on = $(this).find('.on');
 							onWidth = on.width() + parseInt(on.css('padding-left')) + parseInt(on.css('padding-right'));
@@ -230,7 +230,11 @@
 							xDiff = touch.pageX - xStart;
 							yDiff = yStart - touch.pageY;
 
+
 							if (($switch.hasClass('is-on') && xDiff < 0 && xDiff > -1 * onWidth) || ($switch.hasClass('is-off') && xDiff > 0 && xDiff < onWidth)) {
+								if (xDiff > 10 || xDiff < -10) {
+									$switch.addClass('no-transition');
+								}
 								$wrap.css('margin-left', parseFloat(initMarginLeft) + xDiff);
 								$toggle.css('left', parseFloat(initLeft) + xDiff);
 							}
@@ -255,22 +259,38 @@
 						if (swiping) {
 							swiping = false;
 							timeEnd = (new Date()).getTime();
-							time = (timeEnd - timeStart)/1000;
+							time = (timeEnd - timeStart);
+							$switch.removeClass('no-transition');
 
 							var speed = Math.round(distance/time);
+							if (time < 200) {
+								$switch.trigger('click');
+								return true;
+							}
+
 							if (speed > 100) {
 								if ((angle > 90) && (angle < 270)) {
 									swipeLeft();
+									return true;
 								} else {
 									swipeRight();
+									return true;
 								}
 							} else {
 								if ($switch.hasClass('is-on')) {
-									$wrap.css('margin-left', 0);
-									$toggle.css('left', onWidth);
+									if (xDiff > -1 * onWidth/2) {
+										$wrap.css('margin-left', 0);
+										$toggle.css('left', onWidth);
+									} else {
+										$switch.trigger('click');
+									}
 								} else {
-									$wrap.css('margin-left', -1 * onWidth);
-									$toggle.css('left', 0);
+									if (xDiff < onWidth/2) {
+										$wrap.css('margin-left', -1 * onWidth);
+										$toggle.css('left', 0);
+									} else {
+										$switch.trigger('click');
+									}
 								}
 							}
 						}
