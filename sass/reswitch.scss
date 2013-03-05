@@ -6,7 +6,7 @@
 
 .reswitch {
 	cursor: pointer;
-
+	
 	input {
 		display: none;
 	}
@@ -27,6 +27,12 @@
 		.reswitch-toggle {
 			position: absolute;
 			top: 0;	z-index: 100;
+		}
+	}
+
+	&.no-transition {
+		.wrap, .reswitch-toggle {
+			@include transition(none !important);
 		}
 	}
 }
