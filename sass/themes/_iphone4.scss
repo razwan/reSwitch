@@ -36,12 +36,12 @@
 		}
 	}
 
-	.on, .off, .toggle-placeholder {
+	.on-text, .off-text, .toggle-placeholder {
 		height: $height;
 		// @include background-image(linear-gradient(rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.4)));
 	}
 
-	.on, .off {
+	.on-text, .off-text {
 		font-weight: bold;
 		text-align: center;
 		text-transform: uppercase;
@@ -50,12 +50,12 @@
 		padding-right: $padding;
 	}
 
-	.on {
+	.on-text {
 		// background-color: #2692ed;
 		color: white;
 	}
 
-	.off {
+	.off-text {
 		// background-color: #f0f0f0;
 		color: gray;
 	}
@@ -90,7 +90,7 @@
 	&.is-on {
 		.wrap {
 			background-color: #2692ed;
-			.off {
+			.off-text {
 				color/*\**/: white\9;
 			}
 		}
@@ -99,7 +99,7 @@
 	&.is-off {
 		.wrap {
 			background-color: #f0f0f0;
-			.on {
+			.on-text {
 				color/*\**/: gray\9;
 			}
 		}

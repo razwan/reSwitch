@@ -110,9 +110,9 @@
 						(settings.hasToggle) ? "<div class='reswitch-toggle' "+ transitionLeft + "><div class='handle'></div></div>" : "",
 						"<div class='reswitch-inner'>",
 							"<div class='wrap' ", transitionMarginLeft, ">",
-								"<div class='on'>" + settings.textOn + "</div>",
+								"<div class='on-text'>" + settings.textOn + "</div>",
 								(settings.hasToggle) ? "<div class='toggle-placeholder'></div>" : "",
-								"<div class='off'>" + settings.textOff + "</div>",
+								"<div class='off-text'>" + settings.textOff + "</div>",
 							"</div>",
 						"</div>"
 					].join("");
