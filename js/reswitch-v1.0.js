@@ -136,11 +136,11 @@
 				}
 
 				// Make toggle as small as the bigger option
-				var on = $inner.find('.on'),
+				var on = $inner.find('.on-text'),
 					onClone = on.clone().insertAfter(on).css('width','auto').css('float','left'),
 					onWidth = onClone.width() + parseInt(onClone.css('padding-left')) + parseInt(onClone.css('padding-right'));
 					onClone.remove();
-				var off = $inner.find('.off'),
+				var off = $inner.find('.off-text'),
 					offClone = off.clone().insertAfter(off).css('width','auto').css('float','left'),
 					offWidth = offClone.width() + parseInt(offClone.css('padding-left')) + parseInt(offClone.css('padding-right'));
 					offClone.remove();
@@ -207,7 +207,7 @@
 							touch = event.targetTouches ? event.targetTouches[0] : e;
 							e.preventDefault();
 
-							on = $(this).find('.on');
+							on = $(this).find('.on-text');
 							onWidth = on.width() + parseInt(on.css('padding-left')) + parseInt(on.css('padding-right'));
 
 						swiping = true;
